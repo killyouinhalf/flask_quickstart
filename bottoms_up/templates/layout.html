@@ -1,0 +1,25 @@
+<!-- This is the base html for all URLs used in our app. Pretty much standard html, except where the Jinja2 templating comes in -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bottoms Up</title>
+	<!-- How to link to a stylesheet using Jinja2 -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<header>
+		<h1 class="logo">Bottoms Up</h1>
+		<!-- Creating links using Jinja2 -->
+		<nav>
+    		<ul class="menu">
+        		<li><a href="{{ url_for('index') }}">Home</a></li>
+        	</ul>
+        </nav>
+	</header>
+	<div>
+	{% block content %}
+	<!-- This is where the content of the other pages will be displayed -->
+	{% endblock %}
+	</div>
+</body>
+</html>
